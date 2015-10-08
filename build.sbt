@@ -1,14 +1,15 @@
+import play.PlayScala
+
 name := "PlayBeanstalkSample"
 
 version := "1.0-SNAPSHOT"
 
 libraryDependencies ++= Seq(
-  jdbc,
-  anorm,
-  cache
 )     
 
-play.Project.playScalaSettings
+lazy val root = (project in file(".")).enablePlugins(PlayScala)
+
+scalaVersion := "2.11.5"
 
 lazy val distEb = TaskKey[Unit]("dist-eb", "")
 
